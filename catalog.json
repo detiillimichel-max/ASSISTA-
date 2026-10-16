@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "source": "Internet Archive",
+  "updatedAt": null,
+  "candidateTarget": 1000,
+  "candidatesCollectedThisRun": 0,
+  "metadataChecksThisRun": 0,
+  "count": 0,
+  "items": [],
+  "categories": [
+    {
+      "key": "filmes",
+      "title": "Filmes",
+      "count": 0,
+      "path": "catalog/filmes.json"
+    },
+    {
+      "key": "desenhos",
+      "title": "Desenhos",
+      "count": 0,
+      "path": "catalog/desenhos.json"
+    },
+    {
+      "key": "series",
+      "title": "Séries",
+      "count": 0,
+      "path": "catalog/series.json"
+    },
+    {
+      "key": "documentarios",
+      "title": "Documentários",
+      "count": 0,
+      "path": "catalog/documentarios.json"
+    },
+    {
+      "key": "comedia",
+      "title": "Comédia",
+      "count": 0,
+      "path": "catalog/comedia.json"
+    },
+    {
+      "key": "historia",
+      "title": "História",
+      "count": 0,
+      "path": "catalog/historia.json"
+    },
+    {
+      "key": "ciencia",
+      "title": "Ciência e espaço",
+      "count": 0,
+      "path": "catalog/ciencia.json"
+    },
+    {
+      "key": "musica",
+      "title": "Música e shows",
+      "count": 0,
+      "path": "catalog/musica.json"
+    }
+  ],
+  "notes": [
+    "O catálogo será preenchido na primeira execução manual do GitHub Actions."
+  ]
+}
