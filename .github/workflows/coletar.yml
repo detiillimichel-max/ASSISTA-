@@ -1,0 +1,44 @@
+name: Atualizar catálogo Internet Archive
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: players-catalog-update
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Coletar e validar catálogo
+        env:
+          TARGET_CANDIDATES: "1000"
+          MAX_METADATA_CHECKS: "160"
+        run: python scripts/coletar.py
+
+      - name: Salvar catálogo atualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog.json catalog/
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração no catálogo."
+          else
+            git commit -m "Atualiza catálogo do Internet Archive"
+            git push
+          fi
