@@ -1,4 +1,4 @@
-# PLAYERS — Catálogo Internet Archive
+# ASSISTA  — Catálogo Internet Archive
 
 Repositório independente para coletar metadados públicos do Internet Archive e publicar um catálogo JSON para aplicativos consumidores, como o PLAYORA.
 
