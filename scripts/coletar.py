@@ -33,6 +33,73 @@ def get_json(url):
 def text(v):
     return ", ".join(map(str,v)) if isinstance(v,list) else str(v or "").strip()
 
+# Moderacao familiar multilíngue baseada em metadados.
+# Bloqueia sinais explícitos; não substitui análise visual do vídeo.
+import re
+import unicodedata
+
+BLOCKED_TERMS = [
+    # Sexual explícito / pornografia
+    "porn", "pornography", "pornographic", "porno", "pornografia", "pornografico",
+    "pornografica", "pornográfico", "pornográfica", "xxx", "hentai", "erotic",
+    "erotica", "erotika", "erotico", "erotica", "erótico", "erótica",
+    "sex tape", "sex film", "sex video", "sex clip", "sexually explicit",
+    "explicit sex", "sexual intercourse", "sexual content", "adult video",
+    "adult film", "adult movie", "adult entertainment", "hardcore",
+    "softcore", "striptease", "stripping", "prostitution", "escort",
+    "nude", "nudity", "nudes", "naked", "topless", "bare breasts",
+    "desnudo", "desnuda", "desnudos", "desnudez", "sexo explicito",
+    "sexo explícito", "filme adulto", "filme erotico", "filme erótico",
+    "conteudo sexual", "conteúdo sexual", "conteudo adulto", "conteúdo adulto",
+    "sexo", "sexual", "seksual", "sexuell", "erotik", "porno film",
+    "pornofilm", "pornovideo", "sexfilm", "sexvideo", "sexclip",
+    "film erotique", "film pornographique", "vidéo pornographique",
+    "pelicula pornografica", "película pornográfica", "contenido sexual",
+    "contenido para adultos", "contenido adulto", "sexo amateur",
+    "amateur porn", "onlyfans", "fetish", "bdsm", "bondage", "incest",
+    "rape", "sexual assault", "sexual abuse", "child sexual abuse",
+    "violacao sexual", "violação sexual", "abuso sexual", "estupro",
+    "порно", "порнография", "эротика", "секс", "色情", "成人视频",
+    "猥褻", "成人向け", "ポルノ", "セックス", "섹스", "포르노",
+    # Violência gráfica / extrema
+    "gore", "snuff film", "snuff movie", "graphic violence", "torture",
+    "beheading", "decapitation", "dismemberment", "execution video",
+    "real murder", "real killing", "brutal killing", "extreme violence",
+    "violent pornography", "murder footage", "massacre footage",
+    "tortura", "decapitacao", "decapitação", "esquartejamento",
+    "violencia grafica", "violência gráfica", "execucao real", "execução real",
+    "video de execução", "vídeo de execução", "film de torture",
+    "guerra gore", "暴力描写", "拷問", "斬首", "残虐",
+    # Palavrões comuns em vários idiomas (termos isolados)
+    "fuck", "fucking", "motherfucker", "shit", "bullshit", "bitch",
+    "cunt", "cock", "dick", "pussy", "dildo", "blowjob", "handjob",
+    "asshole", "fucker", "merda", "porra", "caralho", "buceta", "puta",
+    "putaria", "foder", "fodendo", "foda-se", "fodase", "cacete",
+    "mierda", "joder", "jodido", "coño", "cojones", "cabron", "cabrón",
+    "puta madre", "putain", "merde", "connard", "salope",
+    "scheisse", "scheiße", "ficken", "arschloch", "hure",
+    "kurwa", "chuj", "blyat", "блядь", "сука", "хуй", "пизда",
+]
+
+def normalized_text(value):
+    value = unicodedata.normalize("NFKD", str(value or ""))
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+    value = value.casefold().replace("_", " ").replace("-", " ")
+    return re.sub(r"[^a-z0-9\\s\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]", " ", value)
+
+BLOCKED_PATTERNS = [
+    re.compile(r"(?<![a-z0-9])" + re.escape(normalized_text(term)).replace(r"\ ", r"\s+") + r"(?![a-z0-9])")
+    for term in BLOCKED_TERMS
+]
+
+def is_family_safe(item):
+    fields = [
+        item.get("identifier", ""), item.get("title", ""),
+        item.get("description", ""), item.get("creator", "")
+    ]
+    text_to_check = normalized_text(" ".join(str(v or "") for v in fields))
+    return not any(pattern.search(text_to_check) for pattern in BLOCKED_PATTERNS)
+
 def search(query, page, rows):
     params = [("q",query),("fl[]","identifier"),("fl[]","title"),("fl[]","description"),("fl[]","year"),("fl[]","creator"),("fl[]","licenseurl"),("rows",str(rows)),("page",str(page)),("output","json"),("sort[]","downloads desc")]
     return get_json("https://archive.org/advancedsearch.php?"+urllib.parse.urlencode(params))
@@ -58,13 +125,13 @@ def main():
     try:
         previous=json.loads(OUT.read_text(encoding="utf-8"))
         for x in previous.get("items",[]):
-            if x.get("identifier") and x.get("playbackUrl"): old[x["identifier"]]=x
+            if x.get("identifier") and x.get("playbackUrl") and is_family_safe(x): old[x["identifier"]]=x
     except Exception: pass
     for key,_,_ in CATS:
         try:
             previous=json.loads((DIR/(key+".json")).read_text(encoding="utf-8"))
             for x in previous.get("items",[]):
-                if x.get("identifier") and x.get("playbackUrl"): old.setdefault(x["identifier"],x)
+                if x.get("identifier") and x.get("playbackUrl") and is_family_safe(x): old.setdefault(x["identifier"],x)
         except Exception: pass
     per=max(1,(TARGET+len(CATS)-1)//len(CATS))
     candidates=[]; seen=set()
@@ -77,6 +144,9 @@ def main():
             for d in docs:
                 ident=text(d.get("identifier")); name=text(d.get("title"))
                 if not ident or not name or ident in seen: continue
+                if not is_family_safe({"identifier":ident,"title":name,"description":text(d.get("description")),"creator":text(d.get("creator"))}):
+                    print("BLOCKED unsafe metadata:", ident)
+                    continue
                 seen.add(ident); added+=1
                 candidates.append({"identifier":ident,"title":name,"description":text(d.get("description"))[:1200],"year":text(d.get("year")),"creator":text(d.get("creator")),"license":text(d.get("licenseurl")),"detailsUrl":"https://archive.org/details/"+ident,"thumbnail":"https://archive.org/services/img/"+ident,"category":key,"files":[],"playbackUrl":None})
                 if added>=per: break
