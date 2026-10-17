@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "scripts/coletar.py"
+      - "moderacao/nsfwjs/**"
       - ".github/workflows/coletar.yml"
   workflow_dispatch:
   schedule:
@@ -34,14 +35,25 @@ jobs:
       - name: Verificar sintaxe do coletor antes de executar
         run: python -m py_compile scripts/coletar.py
 
-      - name: Guardar catálogo válido atual e arquivos por categoria
+      - name: Guardar catálogo anterior para restauração integral
+        shell: bash
         run: |
+          set -euo pipefail
+          BACKUP_DIR="$RUNNER_TEMP/assista-backup"
+          mkdir -p "$BACKUP_DIR"
           if [ -f catalog.json ]; then
-            tar -czf /tmp/catalogo-anterior.tar.gz catalog.json catalog/ 2>/dev/null || tar -czf /tmp/catalogo-anterior.tar.gz catalog.json
-            echo "BACKUP_EXISTE=true" >> "$GITHUB_ENV"
+            cp -p catalog.json "$BACKUP_DIR/catalog.json"
+            echo "BACKUP_JSON=true" >> "$GITHUB_ENV"
           else
-            echo "BACKUP_EXISTE=false" >> "$GITHUB_ENV"
+            echo "BACKUP_JSON=false" >> "$GITHUB_ENV"
           fi
+          if [ -d catalog ]; then
+            cp -a catalog "$BACKUP_DIR/catalog"
+            echo "BACKUP_DIR=true" >> "$GITHUB_ENV"
+          else
+            echo "BACKUP_DIR=false" >> "$GITHUB_ENV"
+          fi
+          echo "BACKUP_PATH=$BACKUP_DIR" >> "$GITHUB_ENV"
 
       - name: Preparar Node para NSFWJS
         uses: actions/setup-node@v4
@@ -59,65 +71,87 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: python scripts/coletar.py
 
+      - name: Verificar catálogo gerado antes da moderação visual
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("catalog.json")
+          if not path.is_file():
+              raise SystemExit("ERRO: o coletor não gerou catalog.json; NSFWJS não será executado.")
+          try:
+              data = json.loads(path.read_text(encoding="utf-8"))
+          except Exception as exc:
+              raise SystemExit(f"ERRO: o coletor gerou JSON inválido; NSFWJS não será executado: {exc}")
+          items = data.get("items") if isinstance(data, dict) else None
+          if not isinstance(items, list) or not items:
+              raise SystemExit("ERRO: catálogo vazio ou campo items inválido; NSFWJS não será executado.")
+          print(f"Pré-validação aprovada: {len(items)} itens no catalog.json.")
+          PY
+
       - name: Moderar capas com NSFWJS
         env:
           NSFW_CONCURRENCY: "3"
         run: node moderacao/nsfwjs/moderar-catalogo.js
 
       - name: Validar catálogo antes de publicar
-        id: validar
         run: |
+          set -euo pipefail
           python - <<'PY'
           import json
           from pathlib import Path
 
           path = Path("catalog.json")
-          if not path.exists():
+          if not path.is_file():
               raise SystemExit("ERRO: catalog.json não foi gerado.")
-
           try:
               data = json.loads(path.read_text(encoding="utf-8"))
           except Exception as exc:
               raise SystemExit(f"ERRO: catalog.json inválido: {exc}")
-
           if not isinstance(data, dict):
               raise SystemExit("ERRO: raiz do catálogo precisa ser um objeto.")
-
           items = data.get("items")
           if not isinstance(items, list) or not items:
               raise SystemExit("ERRO: catálogo vazio ou campo items inválido; publicação bloqueada.")
 
-          valid = []
-          for item in items:
+          for index, item in enumerate(items):
               if not isinstance(item, dict):
-                  continue
+                  raise SystemExit(f"ERRO: item {index} não é um objeto.")
               if not item.get("identifier") or not item.get("title"):
-                  continue
-              if not isinstance(item.get("files"), list) or not item["files"]:
-                  continue
+                  raise SystemExit(f"ERRO: item {index} sem identifier ou title.")
+              files = item.get("files")
+              if not isinstance(files, list) or not files:
+                  raise SystemExit(f"ERRO: item {item.get('identifier')} sem arquivos.")
               if not any(
                   isinstance(f, dict) and str(f.get("url", "")).startswith("https://archive.org/download/")
-                  for f in item["files"]
+                  for f in files
               ):
-                  continue
-              valid.append(item)
+                  raise SystemExit(f"ERRO: item {item.get('identifier')} sem URL reproduzível do Archive.org.")
 
-          if not valid:
-              raise SystemExit("ERRO: nenhum item possui metadados e arquivo reproduzível válidos.")
-
-          if len(valid) != len(items):
-              raise SystemExit(
-                  f"ERRO: {len(items) - len(valid)} itens inválidos detectados; publicação bloqueada."
-              )
-
-          data["count"] = len(items)
           print(f"Catálogo validado: {len(items)} itens com metadados e arquivos.")
           PY
 
       - name: Restaurar catálogo anterior se qualquer etapa falhar
-        if: failure() && env.BACKUP_EXISTE == 'true'
+        if: failure()
+        shell: bash
         run: |
-          tar -xzf /tmp/catalogo-anterior.tar.gz || cp /tmp/catalogo-anterior.json catalog.json
+          set -euo pipefail
+          BACKUP_DIR="${BACKUP_PATH:-$RUNNER_TEMP/assista-backup}"
+          if [ "${BACKUP_JSON:-false}" = "true" ] && [ -f "$BACKUP_DIR/catalog.json" ]; then
+            cp -p "$BACKUP_DIR/catalog.json" catalog.json
+          else
+            rm -f catalog.json
+          fi
+          if [ "${BACKUP_DIR:-false}" = "true" ] && [ -d "$BACKUP_DIR/catalog" ]; then
+            rm -rf catalog
+            cp -a "$BACKUP_DIR/catalog" catalog
+          elif [ "${BACKUP_DIR:-false}" != "true" ]; then
+            rm -rf catalog
+          fi
+          echo "Restauração local concluída. Nenhuma publicação ocorre após falha."
 
       - name: Publicar somente alterações validadas
         if: success()
