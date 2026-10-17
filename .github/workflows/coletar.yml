@@ -1,4 +1,4 @@
-name: Atualizar catálogo Internet Archive
+name: Coletar e moderar catálogo ASSISTA+
 
 on:
   push:
@@ -13,13 +13,15 @@ permissions:
   contents: write
 
 concurrency:
-  group: players-catalog-update
+  group: assista-catalog-update
   cancel-in-progress: false
 
 jobs:
-  collect:
+  coletar-moderar-publicar:
+    name: Coletar, moderar e validar catálogo
     runs-on: ubuntu-latest
     timeout-minutes: 45
+
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
@@ -28,21 +30,90 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: "false"
 
-      - name: Coletar e validar catálogo
+      - name: Verificar sintaxe do coletor antes de executar
+        run: python -m py_compile scripts/coletar.py
+
+      - name: Guardar catálogo válido atual
+        run: |
+          if [ -f catalog.json ]; then
+            cp catalog.json /tmp/catalogo-anterior.json
+            echo "BACKUP_EXISTE=true" >> "$GITHUB_ENV"
+          else
+            echo "BACKUP_EXISTE=false" >> "$GITHUB_ENV"
+          fi
+
+      - name: Coletar candidatos e aplicar moderação
         env:
           TARGET_CANDIDATES: "1000"
           MAX_METADATA_CHECKS: "160"
+          PYTHONUNBUFFERED: "1"
         run: python scripts/coletar.py
 
-      - name: Salvar catálogo atualizado
+      - name: Validar catálogo antes de publicar
+        id: validar
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("catalog.json")
+          if not path.exists():
+              raise SystemExit("ERRO: catalog.json não foi gerado.")
+
+          try:
+              data = json.loads(path.read_text(encoding="utf-8"))
+          except Exception as exc:
+              raise SystemExit(f"ERRO: catalog.json inválido: {exc}")
+
+          if not isinstance(data, dict):
+              raise SystemExit("ERRO: raiz do catálogo precisa ser um objeto.")
+
+          items = data.get("items")
+          if not isinstance(items, list) or not items:
+              raise SystemExit("ERRO: catálogo vazio ou campo items inválido; publicação bloqueada.")
+
+          valid = []
+          for item in items:
+              if not isinstance(item, dict):
+                  continue
+              if not item.get("identifier") or not item.get("title"):
+                  continue
+              if not isinstance(item.get("files"), list) or not item["files"]:
+                  continue
+              if not any(
+                  isinstance(f, dict) and str(f.get("url", "")).startswith("https://archive.org/download/")
+                  for f in item["files"]
+              ):
+                  continue
+              valid.append(item)
+
+          if not valid:
+              raise SystemExit("ERRO: nenhum item possui metadados e arquivo reproduzível válidos.")
+
+          if len(valid) != len(items):
+              raise SystemExit(
+                  f"ERRO: {len(items) - len(valid)} itens inválidos detectados; publicação bloqueada."
+              )
+
+          data["count"] = len(items)
+          print(f"Catálogo validado: {len(items)} itens com metadados e arquivos.")
+          PY
+
+      - name: Restaurar catálogo anterior se a validação falhar
+        if: failure() && env.BACKUP_EXISTE == 'true'
+        run: cp /tmp/catalogo-anterior.json catalog.json
+
+      - name: Publicar somente alterações validadas
+        if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add catalog.json catalog/
           if git diff --cached --quiet; then
-            echo "Nenhuma alteração no catálogo."
+            echo "Nenhuma alteração válida para publicar."
           else
-            git commit -m "Atualiza catálogo do Internet Archive"
+            git commit -m "Atualiza catálogo moderado do ASSISTA+"
             git push
           fi
