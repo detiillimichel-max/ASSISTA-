@@ -10,7 +10,7 @@ CHECKS = int(os.getenv("MAX_METADATA_CHECKS", "160"))
 CATS = [
  ("filmes","Filmes",'mediatype:movies AND (subject:film OR subject:cinema)'),
  ("desenhos","Desenhos",'mediatype:movies AND (subject:animation OR subject:cartoons)'),
- ("series","Séries",'mediatype:movies AND (subject:television OR subject:tv series OR subject:serials)'),
+ ("series","Séries (filmes completos)",'mediatype:movies AND (subject:television OR subject:tv series OR subject:serials) NOT subject:episode'),
  ("documentarios","Documentários",'mediatype:movies AND (subject:documentary OR subject:documentaries)'),
  ("comedia","Comédia",'mediatype:movies AND (subject:comedy OR subject:humor)'),
  ("historia","História",'mediatype:movies AND (subject:history OR subject:historical)'),
@@ -53,7 +53,7 @@ BLOCKED_TERMS = [
     "conteudo sexual", "conteúdo sexual", "conteudo adulto", "conteúdo adulto",
     "sexo", "sexual", "seksual", "sexuell", "erotik", "porno film",
     "pornofilm", "pornovideo", "sexfilm", "sexvideo", "sexclip",
-    "film erotique", "film pornographique", "vidéo pornographique",
+    "film erotique", "film pornographique", "vidéo pornographique", "glissements progressifs du plaisir", "adult only", "adults only", "uncensored", "uncut erotic", "erotic drama", "erotic thriller", "sexploitation", "nudist film", "nudism", "naturist film", "naturism",
     "pelicula pornografica", "película pornográfica", "contenido sexual",
     "contenido para adultos", "contenido adulto", "sexo amateur",
     "amateur porn", "onlyfans", "fetish", "bdsm", "bondage", "incest",
@@ -68,7 +68,7 @@ BLOCKED_TERMS = [
     "violent pornography", "murder footage", "massacre footage",
     "tortura", "decapitacao", "decapitação", "esquartejamento",
     "violencia grafica", "violência gráfica", "execucao real", "execução real",
-    "video de execução", "vídeo de execução", "film de torture",
+    "video de execução", "vídeo de execução", "film de torture", "eyewitness news", "graphic footage", "terror attack footage",
     "guerra gore", "暴力描写", "拷問", "斬首", "残虐",
     # Palavrões comuns em vários idiomas (termos isolados)
     "fuck", "fucking", "motherfucker", "shit", "bullshit", "bitch",
@@ -95,24 +95,38 @@ BLOCKED_PATTERNS = [
 def is_family_safe(item):
     fields = [
         item.get("identifier", ""), item.get("title", ""),
-        item.get("description", ""), item.get("creator", "")
+        item.get("description", ""), item.get("creator", ""),
+        item.get("subject", ""), item.get("collection", ""), item.get("mediatype", ""),
+        item.get("format", ""), item.get("licenseurl", ""),
+        " ".join(text(f.get("name", "")) for f in item.get("files", []) if isinstance(f, dict))
     ]
     text_to_check = normalized_text(" ".join(str(v or "") for v in fields))
     return not any(pattern.search(text_to_check) for pattern in BLOCKED_PATTERNS)
 
 def search(query, page, rows):
-    params = [("q",query),("fl[]","identifier"),("fl[]","title"),("fl[]","description"),("fl[]","year"),("fl[]","creator"),("fl[]","licenseurl"),("rows",str(rows)),("page",str(page)),("output","json"),("sort[]","downloads desc")]
+    params = [("q",query),("fl[]","identifier"),("fl[]","title"),("fl[]","description"),("fl[]","year"),("fl[]","creator"),("fl[]","licenseurl"),("fl[]","subject"),("fl[]","collection"),("fl[]","mediatype"),("rows",str(rows)),("page",str(page)),("output","json"),("sort[]","downloads desc")]
     return get_json("https://archive.org/advancedsearch.php?"+urllib.parse.urlencode(params))
 
 def validate(item):
     meta = get_json("https://archive.org/metadata/"+urllib.parse.quote(item["identifier"],safe=""))
     if not meta or not isinstance(meta.get("files"),list): return None
+    metadata = meta.get("metadata") or {}
+    enriched = dict(item)
+    for field in ("title", "description", "creator", "subject", "collection", "mediatype", "licenseurl"):
+        if metadata.get(field):
+            enriched[field] = metadata.get(field)
+    if not is_family_safe(enriched):
+        print("BLOCKED unsafe full metadata:", item.get("identifier"))
+        return None
     files=[]
     for f in meta["files"]:
         name=text(f.get("name"))
-        if name.lower().endswith(VIDEO_EXT) and not f.get("private"):
+        if name.lower().endswith(VIDEO_EXT) and not f.get("private") and is_family_safe({**enriched, "files":[f]}):
             files.append({"name":name,"format":text(f.get("format")),"size":int(f.get("size") or 0),"url":"https://archive.org/download/"+urllib.parse.quote(item["identifier"],safe="")+"/"+urllib.parse.quote(name,safe="/")})
     if not files: return None
+    item.update({k: text(enriched.get(k)) for k in ("title","description","creator","subject","collection","mediatype","licenseurl") if enriched.get(k)})
+    item["files"]=files
+    if not is_family_safe(item): return None
     files.sort(key=lambda x:(not x["name"].lower().endswith((".mp4",".webm",".m4v")),-x["size"]))
     item["files"]=files[:8]
     item["playbackUrl"]=files[0]["url"]
@@ -148,7 +162,7 @@ def main():
                     print("BLOCKED unsafe metadata:", ident)
                     continue
                 seen.add(ident); added+=1
-                candidates.append({"identifier":ident,"title":name,"description":text(d.get("description"))[:1200],"year":text(d.get("year")),"creator":text(d.get("creator")),"license":text(d.get("licenseurl")),"detailsUrl":"https://archive.org/details/"+ident,"thumbnail":"https://archive.org/services/img/"+ident,"category":key,"files":[],"playbackUrl":None})
+                candidates.append({"identifier":ident,"title":name,"description":text(d.get("description"))[:1200],"year":text(d.get("year")),"creator":text(d.get("creator")),"subject":text(d.get("subject")),"collection":text(d.get("collection")),"mediatype":text(d.get("mediatype")),"license":text(d.get("licenseurl")),"detailsUrl":"https://archive.org/details/"+ident,"thumbnail":"https://archive.org/services/img/"+ident,"category":key,"files":[],"playbackUrl":None})
                 if added>=per: break
             page+=1; time.sleep(.15)
         print(key, "candidates:",added)
