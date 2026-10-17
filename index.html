@@ -28,11 +28,10 @@ main{max-width:1500px;margin:auto;padding:24px clamp(14px,3vw,42px) 56px}.hero{p
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="dialog"><div class="dialog-head"><h2 id="modalTitle">Reproduzir vídeo</h2><button class="close" id="close" aria-label="Fechar player">✕</button></div><div class="player" id="player"></div><div class="player-note" id="playerNote">A reprodução depende da disponibilidade do arquivo.</div><div class="details"><a id="archiveLink" href="#" target="_blank" rel="noopener">Abrir página no Internet Archive ↗</a></div></div></div>
 <script>
 (function(){
+// Categorias oficiais da interface. O catálogo precisa ter itens com estes mesmos IDs.
 const categories=[
  {key:"filmes",title:"Filmes",icon:"🎬",description:"Aventura, romance, comédia e clássicos do cinema",subcategories:["Aventura e ação","Romance e drama","Comédia","Mistério e suspense","Musicais","Filmes infantis","Cinema internacional"]},
- {key:"series",title:"Séries",icon:"📺",description:"Filmes completos classificados por estilo",subcategories:["Aventura e ação","Comédia","Drama","Mistério e investigação","Ficção científica"]},
- {key:"desenhos",title:"Desenhos",icon:"🎨",description:"Animação clássica, infantil e super-heróis"},
- {key:"documentarios",title:"Documentários",icon:"🎥",description:"História, ciência, natureza e conhecimento"},
+ {key:"series",title:"Séries",icon:"📺",description:"Séries e seriados disponíveis no acervo",subcategories:["Aventura e ação","Comédia","Drama","Mistério e investigação","Ficção científica"]},
  {key:"audiolivros",title:"Audiolivros",icon:"🎧",description:"Literatura narrada e obras em áudio",subcategories:["Literatura narrada","Contos e histórias infantis","Clássicos em áudio","Poesia recitada","Cursos e palestras educativas"]},
  {key:"musica_audio",title:"Música em áudio",icon:"🎵",description:"Música para ouvir, organizada por estilo",subcategories:["Clássica e instrumental","Jazz e blues","Música popular","Trilhas sonoras","Gravações históricas","Rock","MPB","Música eletrônica","Música infantil"]}
 ];
@@ -93,7 +92,7 @@ fetch("./catalog.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error("HT
 allItems=Array.isArray(data.items)?data.items:[];
 // Remove da playlist local itens que foram excluídos pelo filtro familiar do catálogo.
 try{const safeIds=new Set(allItems.map(x=>String(x.identifier)));const saved=await readPlaylist();for(const savedItem of saved){if(!safeIds.has(String(savedItem.identifier)))await deletePlaylistItem(savedItem.identifier)}}catch(e){console.warn("Não foi possível limpar itens antigos da playlist",e)}
-loaded=true;status.innerHTML='<b>● Catálogo conectado</b> · '+allItems.length+' vídeos · Atualizado '+(data.updatedAt?new Date(data.updatedAt).toLocaleDateString("pt-BR"):"recentemente");
+loaded=true;const supportedCount=allItems.filter(x=>categories.some(cat=>cat.key===String(x.category||"").trim().toLowerCase())).length;status.innerHTML='<b>● Catálogo conectado</b> · '+supportedCount+' títulos nas categorias ativas · Atualizado '+(data.updatedAt?new Date(data.updatedAt).toLocaleDateString("pt-BR"):"recentemente");
 renderPlaylist();render();
 }).catch(err=>{status.textContent="Não foi possível carregar catalog.json.";content.innerHTML='<div class="message">O catálogo não foi carregado. Confirme se o GitHub Pages está publicado na raiz do repositório e se <a href="./catalog.json">catalog.json</a> abre corretamente. ('+safe(err.message)+')</div>'});
 })();
