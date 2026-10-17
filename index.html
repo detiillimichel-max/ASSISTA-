@@ -89,6 +89,8 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")closePlayer()});
 search.addEventListener("input",render);
 fetch("./catalog.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}).then(data=>{
 allItems=Array.isArray(data.items)?data.items:[];
+// Remove da playlist local itens que foram excluídos pelo filtro familiar do catálogo.
+try{const safeIds=new Set(allItems.map(x=>String(x.identifier)));const saved=await readPlaylist();for(const savedItem of saved){if(!safeIds.has(String(savedItem.identifier)))await deletePlaylistItem(savedItem.identifier)}}catch(e){console.warn("Não foi possível limpar itens antigos da playlist",e)}
 loaded=true;status.innerHTML='<b>● Catálogo conectado</b> · '+allItems.length+' vídeos · Atualizado '+(data.updatedAt?new Date(data.updatedAt).toLocaleDateString("pt-BR"):"recentemente");
 renderPlaylist();render();
 }).catch(err=>{status.textContent="Não foi possível carregar catalog.json.";content.innerHTML='<div class="message">O catálogo não foi carregado. Confirme se o GitHub Pages está publicado na raiz do repositório e se <a href="./catalog.json">catalog.json</a> abre corretamente. ('+safe(err.message)+')</div>'});
