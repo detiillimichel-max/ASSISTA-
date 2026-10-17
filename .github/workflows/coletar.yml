@@ -49,9 +49,9 @@ jobs:
           fi
           if [ -d catalog ]; then
             cp -a catalog "$BACKUP_DIR/catalog"
-            echo "BACKUP_DIR=true" >> "$GITHUB_ENV"
+            echo "BACKUP_CATALOG_DIR=true" >> "$GITHUB_ENV"
           else
-            echo "BACKUP_DIR=false" >> "$GITHUB_ENV"
+            echo "BACKUP_CATALOG_DIR=false" >> "$GITHUB_ENV"
           fi
           echo "BACKUP_PATH=$BACKUP_DIR" >> "$GITHUB_ENV"
 
@@ -145,10 +145,10 @@ jobs:
           else
             rm -f catalog.json
           fi
-          if [ "${BACKUP_DIR:-false}" = "true" ] && [ -d "$BACKUP_DIR/catalog" ]; then
+          if [ "${BACKUP_CATALOG_DIR:-false}" = "true" ] && [ -d "$BACKUP_DIR/catalog" ]; then
             rm -rf catalog
             cp -a "$BACKUP_DIR/catalog" catalog
-          elif [ "${BACKUP_DIR:-false}" != "true" ]; then
+          elif [ "${BACKUP_CATALOG_DIR:-false}" != "true" ]; then
             rm -rf catalog
           fi
           echo "Restauração local concluída. Nenhuma publicação ocorre após falha."
