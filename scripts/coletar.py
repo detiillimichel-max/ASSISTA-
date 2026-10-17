@@ -92,19 +92,60 @@ BLOCKED_PATTERNS = [
     for term in BLOCKED_TERMS
 ]
 
+# Sinais fortes de acervos adultos; são avaliados separadamente dos termos genéricos.
+BLOCKED_COLLECTIONS = {
+    "adult", "adults", "adult content", "adult movies", "adult videos",
+    "erotic", "erotica", "porn", "pornography", "xxx", "hentai",
+    "sex films", "sex videos", "nudist", "nudism", "sexploitation"
+}
+BLOCKED_FIELD_TERMS = [
+    "adult category", "adult collection", "erotic collection", "porn collection",
+    "pornographic film", "erotic film", "erotic cinema", "explicit scenes",
+    "full frontal nudity", "full frontal", "graphic sexual content",
+    "sexualized", "sexually explicit", "sexual stimulation", "sexual fantasy",
+    "adult entertainment", "adult material", "18 plus", "18+", "rated x",
+    "rating x", "xxx rated", "uncensored adult", "erotic french film",
+    "film érotique", "film erotique", "glissements progressifs du plaisir",
+    "erwachsenenfilm", "film per adulti", "película erótica", "pelicula erotica",
+    "contenido explícito", "contenido explicito", "material pornográfico",
+    "material pornografico", "conteúdo explícito", "conteudo explicito",
+    "vídeo erótico", "video erotico", "filme de sexo", "filme sexual"
+]
+BLOCKED_FIELD_PATTERNS = [
+    re.compile(r"(?<![a-z0-9])" + re.escape(normalized_text(term)).replace(r"\\ ", r"\\s+") + r"(?![a-z0-9])")
+    for term in BLOCKED_FIELD_TERMS
+]
+
 def is_family_safe(item):
+    # Examina metadados textuais e nomes dos arquivos; não faz análise visual.
     fields = [
         item.get("identifier", ""), item.get("title", ""),
         item.get("description", ""), item.get("creator", ""),
-        item.get("subject", ""), item.get("collection", ""), item.get("mediatype", ""),
-        item.get("format", ""), item.get("licenseurl", ""),
-        " ".join(text(f.get("name", "")) for f in item.get("files", []) if isinstance(f, dict))
+        item.get("subject", ""), item.get("collection", ""),
+        item.get("mediatype", ""), item.get("format", ""),
+        item.get("licenseurl", ""), item.get("license", ""),
+        " ".join(text(f.get("name", "")) + " " + text(f.get("format", ""))
+                 for f in item.get("files", []) if isinstance(f, dict))
     ]
-    text_to_check = normalized_text(" ".join(str(v or "") for v in fields))
-    return not any(pattern.search(text_to_check) for pattern in BLOCKED_PATTERNS)
+    field_map = {k: normalized_text(item.get(k, "")) for k in ("title", "identifier", "subject", "collection")}
+    collection_values = [normalized_text(v) for v in (
+        item.get("collection", []) if isinstance(item.get("collection"), list)
+        else [item.get("collection", "")]
+    )]
+    if any(v.strip() in BLOCKED_COLLECTIONS for v in collection_values if v.strip()):
+        return False
+    # Título, ID e arquivo recebem a regra de segurança mais estrita.
+    high_risk = " ".join([
+        field_map["title"], field_map["identifier"],
+        " ".join(text(f.get("name", "")) for f in item.get("files", []) if isinstance(f, dict))
+    ])
+    if any(p.search(high_risk) for p in BLOCKED_PATTERNS + BLOCKED_FIELD_PATTERNS):
+        return False
+    all_text = normalized_text(" ".join(str(v or "") for v in fields))
+    return not any(p.search(all_text) for p in BLOCKED_PATTERNS + BLOCKED_FIELD_PATTERNS)
 
 def search(query, page, rows):
-    params = [("q",query),("fl[]","identifier"),("fl[]","title"),("fl[]","description"),("fl[]","year"),("fl[]","creator"),("fl[]","licenseurl"),("fl[]","subject"),("fl[]","collection"),("fl[]","mediatype"),("rows",str(rows)),("page",str(page)),("output","json"),("sort[]","downloads desc")]
+    params = [("q",query),("fl[]","identifier"),("fl[]","title"),("fl[]","description"),("fl[]","year"),("fl[]","creator"),("fl[]","licenseurl"),("fl[]","subject"),("fl[]","collection"),("fl[]","mediatype"),("fl[]","format"),("rows",str(rows)),("page",str(page)),("output","json"),("sort[]","downloads desc")]
     return get_json("https://archive.org/advancedsearch.php?"+urllib.parse.urlencode(params))
 
 def validate(item):
@@ -112,7 +153,7 @@ def validate(item):
     if not meta or not isinstance(meta.get("files"),list): return None
     metadata = meta.get("metadata") or {}
     enriched = dict(item)
-    for field in ("title", "description", "creator", "subject", "collection", "mediatype", "licenseurl"):
+    for field in ("title", "description", "creator", "subject", "collection", "mediatype", "licenseurl", "format"):
         if metadata.get(field):
             enriched[field] = metadata.get(field)
     if not is_family_safe(enriched):
@@ -124,7 +165,7 @@ def validate(item):
         if name.lower().endswith(VIDEO_EXT) and not f.get("private") and is_family_safe({**enriched, "files":[f]}):
             files.append({"name":name,"format":text(f.get("format")),"size":int(f.get("size") or 0),"url":"https://archive.org/download/"+urllib.parse.quote(item["identifier"],safe="")+"/"+urllib.parse.quote(name,safe="/")})
     if not files: return None
-    item.update({k: text(enriched.get(k)) for k in ("title","description","creator","subject","collection","mediatype","licenseurl") if enriched.get(k)})
+    item.update({k: text(enriched.get(k)) for k in ("title","description","creator","subject","collection","mediatype","licenseurl","format") if enriched.get(k)})
     item["files"]=files
     if not is_family_safe(item): return None
     files.sort(key=lambda x:(not x["name"].lower().endswith((".mp4",".webm",".m4v")),-x["size"]))
