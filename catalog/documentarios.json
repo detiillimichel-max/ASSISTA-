@@ -1,7 +1,1070 @@
 {
   "category": "documentarios",
   "title": "Documentários",
-  "updatedAt": "2026-10-16T11:39:04.639903+00:00",
-  "count": 0,
-  "items": []
+  "updatedAt": "2026-10-17T06:17:18.637071+00:00",
+  "count": 24,
+  "items": [
+    {
+      "identifier": "africa_speaks",
+      "title": "Africa Speaks",
+      "description": "You can find more information regarding this film on its IMDb page .",
+      "year": "1930",
+      "creator": "",
+      "license": "http://creativecommons.org/licenses/publicdomain/",
+      "detailsUrl": "https://archive.org/details/africa_speaks",
+      "thumbnail": "https://archive.org/services/img/africa_speaks",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "africa_speaks.mp4",
+          "format": "h.264",
+          "size": 312452956,
+          "url": "https://archive.org/download/africa_speaks/africa_speaks.mp4"
+        },
+        {
+          "name": "africa_speaks_512kb.mp4",
+          "format": "512Kb MPEG4",
+          "size": 218443482,
+          "url": "https://archive.org/download/africa_speaks/africa_speaks_512kb.mp4"
+        },
+        {
+          "name": "africa_speaks.mpeg",
+          "format": "MPEG2",
+          "size": 3495731204,
+          "url": "https://archive.org/download/africa_speaks/africa_speaks.mpeg"
+        },
+        {
+          "name": "africa_speaks.ogv",
+          "format": "Ogg Video",
+          "size": 213946233,
+          "url": "https://archive.org/download/africa_speaks/africa_speaks.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/africa_speaks/africa_speaks.mp4",
+      "validatedAt": "2026-10-17T06:17:09.735012+00:00"
+    },
+    {
+      "identifier": "ANOPENSECRETHollywoodDocumentaryAvailableUntilOctober31YouTube720p",
+      "title": "AN OPEN SECRET Hollywood Documentary Available Until October 31 You Tube ( 720p)",
+      "description": "Hollywood Documentary on pedophilia.",
+      "year": "",
+      "creator": "",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/ANOPENSECRETHollywoodDocumentaryAvailableUntilOctober31YouTube720p",
+      "thumbnail": "https://archive.org/services/img/ANOPENSECRETHollywoodDocumentaryAvailableUntilOctober31YouTube720p",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "AN OPEN SECRET Hollywood Documentary available until October 31 - YouTube (720p).mp4",
+          "format": "MPEG4",
+          "size": 617464442,
+          "url": "https://archive.org/download/ANOPENSECRETHollywoodDocumentaryAvailableUntilOctober31YouTube720p/AN%20OPEN%20SECRET%20Hollywood%20Documentary%20available%20until%20October%2031%20-%20YouTube%20%28720p%29.mp4"
+        },
+        {
+          "name": "AN OPEN SECRET Hollywood Documentary available until October 31 - YouTube (720p).ogv",
+          "format": "Ogg Video",
+          "size": 449485049,
+          "url": "https://archive.org/download/ANOPENSECRETHollywoodDocumentaryAvailableUntilOctober31YouTube720p/AN%20OPEN%20SECRET%20Hollywood%20Documentary%20available%20until%20October%2031%20-%20YouTube%20%28720p%29.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/ANOPENSECRETHollywoodDocumentaryAvailableUntilOctober31YouTube720p/AN%20OPEN%20SECRET%20Hollywood%20Documentary%20available%20until%20October%2031%20-%20YouTube%20%28720p%29.mp4",
+      "validatedAt": "2026-10-17T06:17:15.773372+00:00"
+    },
+    {
+      "identifier": "AnimatedHeroClassics",
+      "title": "Animated Hero Classics",
+      "description": "Biographical Documentaries on Historical Figures. Christopher Columbus, William Bradford, General George Washington, Benjamin Franklin, Abraham Lincoln, Thomas Edison, Florence Nightingale, Pocahontas, Louis Pasteur, Alexander Graham Bell, Maccabees, Harriet Tubman, The Wright Brothers, Helen Keller, Leonardo da Vinci, Joan of Arc, Marco Polo, Galileo, Marie Curie, Beethoven.",
+      "year": "",
+      "creator": "",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/AnimatedHeroClassics",
+      "thumbnail": "https://archive.org/services/img/AnimatedHeroClassics",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "Leonardo da Vinci.mp4",
+          "format": "h.264",
+          "size": 181553562,
+          "url": "https://archive.org/download/AnimatedHeroClassics/Leonardo%20da%20Vinci.mp4"
+        },
+        {
+          "name": "George Washington.mp4",
+          "format": "h.264",
+          "size": 180868520,
+          "url": "https://archive.org/download/AnimatedHeroClassics/George%20Washington.mp4"
+        },
+        {
+          "name": "Abraham Lincoln.mp4",
+          "format": "h.264",
+          "size": 178662996,
+          "url": "https://archive.org/download/AnimatedHeroClassics/Abraham%20Lincoln.mp4"
+        },
+        {
+          "name": "Hellen Keller.mp4",
+          "format": "h.264",
+          "size": 174425183,
+          "url": "https://archive.org/download/AnimatedHeroClassics/Hellen%20Keller.mp4"
+        },
+        {
+          "name": "Maccabees.mp4",
+          "format": "h.264",
+          "size": 174066459,
+          "url": "https://archive.org/download/AnimatedHeroClassics/Maccabees.mp4"
+        },
+        {
+          "name": "Beethoven.mp4",
+          "format": "h.264",
+          "size": 173504818,
+          "url": "https://archive.org/download/AnimatedHeroClassics/Beethoven.mp4"
+        },
+        {
+          "name": "Galileo.mp4",
+          "format": "h.264",
+          "size": 171650002,
+          "url": "https://archive.org/download/AnimatedHeroClassics/Galileo.mp4"
+        },
+        {
+          "name": "Christopher Columbus.mp4",
+          "format": "h.264",
+          "size": 171377619,
+          "url": "https://archive.org/download/AnimatedHeroClassics/Christopher%20Columbus.mp4"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/AnimatedHeroClassics/Leonardo%20da%20Vinci.mp4",
+      "validatedAt": "2026-10-17T06:17:17.397822+00:00"
+    },
+    {
+      "identifier": "BBCHorizonCollection512Episodes",
+      "title": "BBC Horizon Collection 512 Episodes",
+      "description": "BBC Horizon Collection 512 Episodes",
+      "year": "",
+      "creator": "",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/BBCHorizonCollection512Episodes",
+      "thumbnail": "https://archive.org/services/img/BBCHorizonCollection512Episodes",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "BBC Horizon - s0000e79 - Sex: A Horizon Guide.mp4",
+          "format": "MPEG4",
+          "size": 716485497,
+          "url": "https://archive.org/download/BBCHorizonCollection512Episodes/BBC%20Horizon%20-%20s0000e79%20-%20Sex%3A%20A%20Horizon%20Guide.mp4"
+        },
+        {
+          "name": "BBC Horizon - s0000e81 - Impact a Horizon Guide to Car Crashes.mp4",
+          "format": "MPEG4",
+          "size": 715114617,
+          "url": "https://archive.org/download/BBCHorizonCollection512Episodes/BBC%20Horizon%20-%20s0000e81%20-%20Impact%20a%20Horizon%20Guide%20to%20Car%20Crashes.mp4"
+        },
+        {
+          "name": "BBC Horizon - s1987e16 - Life Story.mp4",
+          "format": "h.264",
+          "size": 664713341,
+          "url": "https://archive.org/download/BBCHorizonCollection512Episodes/BBC%20Horizon%20-%20s1987e16%20-%20Life%20Story.mp4"
+        },
+        {
+          "name": "BBC Horizon - s1972e16 - Rail Crash.mp4",
+          "format": "MPEG4",
+          "size": 620789503,
+          "url": "https://archive.org/download/BBCHorizonCollection512Episodes/BBC%20Horizon%20-%20s1972e16%20-%20Rail%20Crash.mp4"
+        },
+        {
+          "name": "BBC Horizon - s1993e04-05 - No Ordinary Genius Richard Feynman.mp4",
+          "format": "h.264",
+          "size": 599006843,
+          "url": "https://archive.org/download/BBCHorizonCollection512Episodes/BBC%20Horizon%20-%20s1993e04-05%20-%20No%20Ordinary%20Genius%20Richard%20Feynman.mp4"
+        },
+        {
+          "name": "BBC Horizon - s0000e15 - A Close Encounter Of The Second Kind.mp4",
+          "format": "h.264",
+          "size": 560858114,
+          "url": "https://archive.org/download/BBCHorizonCollection512Episodes/BBC%20Horizon%20-%20s0000e15%20-%20A%20Close%20Encounter%20Of%20The%20Second%20Kind.mp4"
+        },
+        {
+          "name": "BBC Horizon - s2006e18 - Pandemic.mp4",
+          "format": "h.264",
+          "size": 554143600,
+          "url": "https://archive.org/download/BBCHorizonCollection512Episodes/BBC%20Horizon%20-%20s2006e18%20-%20Pandemic.mp4"
+        },
+        {
+          "name": "BBC Horizon - s1974e07 - Where Did the Colorado Go.mp4",
+          "format": "MPEG4",
+          "size": 553235736,
+          "url": "https://archive.org/download/BBCHorizonCollection512Episodes/BBC%20Horizon%20-%20s1974e07%20-%20Where%20Did%20the%20Colorado%20Go.mp4"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/BBCHorizonCollection512Episodes/BBC%20Horizon%20-%20s0000e79%20-%20Sex%3A%20A%20Horizon%20Guide.mp4",
+      "validatedAt": "2026-10-17T06:17:06.017796+00:00"
+    },
+    {
+      "identifier": "BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV",
+      "title": "BBC. All. Watched. Over.by. Machines.of. Loving. Grace. 3of 3. Monkey.in.the. Machine. PDTV.x 264. AAC. MVGroup.org",
+      "description": "All Watched Over by Machines of Loving Grace is a BBC television documentary series by filmmaker Adam Curtis . [1] In the series, Curtis argues that computers have failed to liberate humanity, and instead have \"distorted and simplified our view of the world around us.\" [2] The title is taken from a 1967 poem of the same name by Richard Brautigan . [3] The first episode was originally broadcast at 9 pm on 23 May 2011. [2]",
+      "year": "2011",
+      "creator": "Adam Curtis",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV",
+      "thumbnail": "https://archive.org/services/img/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV.x264.AAC.MVGroup.org.mp4",
+          "format": "MPEG4",
+          "size": 1567311547,
+          "url": "https://archive.org/download/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV.x264.AAC.MVGroup.org.mp4"
+        },
+        {
+          "name": "BBC.All.Watched.Over.by.Machines.of.Loving.Grace.2of3.Abuse.of.Vegetational.Concepts.PDTV.x264.AAC.MVGroup.org.mp4",
+          "format": "MPEG4",
+          "size": 1463903780,
+          "url": "https://archive.org/download/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.2of3.Abuse.of.Vegetational.Concepts.PDTV.x264.AAC.MVGroup.org.mp4"
+        },
+        {
+          "name": "BBC.All.Watched.Over.by.Machines.of.Loving.Grace.1of3.Love.and.Power.PDTV.x264.AAC.MVGroup.org.mp4",
+          "format": "MPEG4",
+          "size": 1043336015,
+          "url": "https://archive.org/download/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.1of3.Love.and.Power.PDTV.x264.AAC.MVGroup.org.mp4"
+        },
+        {
+          "name": "BBC.All.Watched.Over.by.Machines.of.Loving.Grace.1of3.Love.and.Power.PDTV.x264.AAC.MVGroup.org.ogv",
+          "format": "Ogg Video",
+          "size": 273586055,
+          "url": "https://archive.org/download/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.1of3.Love.and.Power.PDTV.x264.AAC.MVGroup.org.ogv"
+        },
+        {
+          "name": "BBC.All.Watched.Over.by.Machines.of.Loving.Grace.2of3.Abuse.of.Vegetational.Concepts.PDTV.x264.AAC.MVGroup.org.ogv",
+          "format": "Ogg Video",
+          "size": 272377926,
+          "url": "https://archive.org/download/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.2of3.Abuse.of.Vegetational.Concepts.PDTV.x264.AAC.MVGroup.org.ogv"
+        },
+        {
+          "name": "BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV.x264.AAC.MVGroup.org.ogv",
+          "format": "Ogg Video",
+          "size": 268010710,
+          "url": "https://archive.org/download/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV.x264.AAC.MVGroup.org.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV.x264.AAC.MVGroup.org.mp4",
+      "validatedAt": "2026-10-17T06:17:13.914324+00:00"
+    },
+    {
+      "identifier": "ChelovekskinoapparatomManWithAMovieCamera",
+      "title": "Chelovek s kinoapparatom (Man With A Movie Camera)",
+      "description": "Dziga Vertov's Man With A Movie Camera is considered one of the most innovative and influential films of the silent era. Startlingly modern, this film utilizes a groundbreaking style of rapid editing and incorporates innumerable other cinematic effects to create a work of amazing power and energy. Film pioneer Dziga Vertov uses all the cinematic techniques available at the time - dissolves, split screen, slow motion and freeze frames. This movie is silent! But here are some music that i think fit to it The Drum & Bass from Digibeat Music and the groovy sound from Centerpole If you know of music that you think do fit to this Movie please say so in your review and share with all of us",
+      "year": "1929",
+      "creator": "",
+      "license": "http://creativecommons.org/licenses/publicdomain/",
+      "detailsUrl": "https://archive.org/details/ChelovekskinoapparatomManWithAMovieCamera",
+      "thumbnail": "https://archive.org/services/img/ChelovekskinoapparatomManWithAMovieCamera",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "Chelovek_s_kino-apparatom_512kb.mp4",
+          "format": "512Kb MPEG4",
+          "size": 257515942,
+          "url": "https://archive.org/download/ChelovekskinoapparatomManWithAMovieCamera/Chelovek_s_kino-apparatom_512kb.mp4"
+        },
+        {
+          "name": "Chelovek_s_kino-apparatom.MPEG",
+          "format": "MPEG2",
+          "size": 2000887808,
+          "url": "https://archive.org/download/ChelovekskinoapparatomManWithAMovieCamera/Chelovek_s_kino-apparatom.MPEG"
+        },
+        {
+          "name": "Chelovek_s_kino-apparatom.ogv",
+          "format": "Ogg Video",
+          "size": 258554654,
+          "url": "https://archive.org/download/ChelovekskinoapparatomManWithAMovieCamera/Chelovek_s_kino-apparatom.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/ChelovekskinoapparatomManWithAMovieCamera/Chelovek_s_kino-apparatom_512kb.mp4",
+      "validatedAt": "2026-10-17T06:17:03.004156+00:00"
+    },
+    {
+      "identifier": "forensic-files-collection",
+      "title": "Forensic Files All Episodes Collection",
+      "description": "Forensic Files is an American documentary television series that details how various crimes are solved with the use of forensic science. This collection includes 394 episodes out of 400 across 14 seasons and 2 out 6 special episodes: Missing Episodes S5E6 S7E6 S7E31 S8E38 S10E42 S14E18 Missing Special Episodes 2 Eight Men Out 3 See No Evil 4 The Buddhist Monk Murders 6 The Lindbergh Baby Kidnapping: Investigation Reopened",
+      "year": "1996",
+      "creator": "Paul Dowling",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/forensic-files-collection",
+      "thumbnail": "https://archive.org/services/img/forensic-files-collection",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "Forensic Files Special Episode 5 The JFK Assassination Investigation Reopened.mp4",
+          "format": "MPEG4",
+          "size": 141331174,
+          "url": "https://archive.org/download/forensic-files-collection/Forensic%20Files%20Special%20Episode%205%20The%20JFK%20Assassination%20Investigation%20Reopened.mp4"
+        },
+        {
+          "name": "Forensic files - All charged up.mp4",
+          "format": "MPEG4",
+          "size": 132254115,
+          "url": "https://archive.org/download/forensic-files-collection/Forensic%20files%20-%20All%20charged%20up.mp4"
+        },
+        {
+          "name": "Forensic Files Special Episode 1 Payback.mp4",
+          "format": "MPEG4",
+          "size": 101887284,
+          "url": "https://archive.org/download/forensic-files-collection/Forensic%20Files%20Special%20Episode%201%20Payback.mp4"
+        },
+        {
+          "name": "Medical Detectives -Forensic Files- in HD - Season 13- Episode 19 - Seedy Intentions.mp4",
+          "format": "MPEG4",
+          "size": 89922998,
+          "url": "https://archive.org/download/forensic-files-collection/Medical%20Detectives%20-Forensic%20Files-%20in%20HD%20-%20Season%2013-%20Episode%2019%20-%20Seedy%20Intentions.mp4"
+        },
+        {
+          "name": "Medical Detectives -Forensic Files- - Season 9- Episode 21 - Point of Origin.mp4",
+          "format": "MPEG4",
+          "size": 89739009,
+          "url": "https://archive.org/download/forensic-files-collection/Medical%20Detectives%20-Forensic%20Files-%20-%20Season%209-%20Episode%2021%20-%20Point%20of%20Origin.mp4"
+        },
+        {
+          "name": "Medical Detectives -Forensic Files- - Season 5- Episode 15 - Time Will Tell.mp4",
+          "format": "MPEG4",
+          "size": 87873802,
+          "url": "https://archive.org/download/forensic-files-collection/Medical%20Detectives%20-Forensic%20Files-%20-%20Season%205-%20Episode%2015%20-%20Time%20Will%20Tell.mp4"
+        },
+        {
+          "name": "Medical Detectives -Forensic Files- in HD - Season 13- Episode 45 - Watchful Eye.mp4",
+          "format": "MPEG4",
+          "size": 87246942,
+          "url": "https://archive.org/download/forensic-files-collection/Medical%20Detectives%20-Forensic%20Files-%20in%20HD%20-%20Season%2013-%20Episode%2045%20-%20Watchful%20Eye.mp4"
+        },
+        {
+          "name": "Medical Detectives -Forensic Files- in HD - Season 14- Episode 11 - Water Logged.mp4",
+          "format": "MPEG4",
+          "size": 87156923,
+          "url": "https://archive.org/download/forensic-files-collection/Medical%20Detectives%20-Forensic%20Files-%20in%20HD%20-%20Season%2014-%20Episode%2011%20-%20Water%20Logged.mp4"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/forensic-files-collection/Forensic%20Files%20Special%20Episode%205%20The%20JFK%20Assassination%20Investigation%20Reopened.mp4",
+      "validatedAt": "2026-10-17T06:17:06.882717+00:00"
+    },
+    {
+      "identifier": "wphoto",
+      "title": "James Nachtwey: War Photographer (2001)",
+      "description": "Documentary about war photographer James Nachtwey, considered by many the greatest war photographer ever.",
+      "year": "2001",
+      "creator": "Christian Frei",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/wphoto",
+      "thumbnail": "https://archive.org/services/img/wphoto",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "War Photographer.mp4",
+          "format": "h.264",
+          "size": 604891068,
+          "url": "https://archive.org/download/wphoto/War%20Photographer.mp4"
+        },
+        {
+          "name": "War Photographer.ogv",
+          "format": "Ogg Video",
+          "size": 442995999,
+          "url": "https://archive.org/download/wphoto/War%20Photographer.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/wphoto/War%20Photographer.mp4",
+      "validatedAt": "2026-10-17T06:17:15.230826+00:00"
+    },
+    {
+      "identifier": "ken-burns-baseball-parts-1-and-2",
+      "title": "Ken Burns - Baseball (Full Series VHS)",
+      "description": "All 9 parts of the Ken Burns documentary series \"Baseball\" on VHS.",
+      "year": "",
+      "creator": "",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/ken-burns-baseball-parts-1-and-2",
+      "thumbnail": "https://archive.org/services/img/ken-burns-baseball-parts-1-and-2",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "Ken Burns - Baseball Parts 1 and 2.mp4",
+          "format": "MPEG4",
+          "size": 5701307520,
+          "url": "https://archive.org/download/ken-burns-baseball-parts-1-and-2/Ken%20Burns%20-%20Baseball%20Parts%201%20and%202.mp4"
+        },
+        {
+          "name": "Ken Burns Part 6.mp4",
+          "format": "MPEG4",
+          "size": 4596094905,
+          "url": "https://archive.org/download/ken-burns-baseball-parts-1-and-2/Ken%20Burns%20Part%206.mp4"
+        },
+        {
+          "name": "Ken Burns - Baseball Part 7.mp4",
+          "format": "MPEG4",
+          "size": 4244229287,
+          "url": "https://archive.org/download/ken-burns-baseball-parts-1-and-2/Ken%20Burns%20-%20Baseball%20Part%207.mp4"
+        },
+        {
+          "name": "Ken Burns Baseball Part 3.mp4",
+          "format": "MPEG4",
+          "size": 3695476980,
+          "url": "https://archive.org/download/ken-burns-baseball-parts-1-and-2/Ken%20Burns%20Baseball%20Part%203.mp4"
+        },
+        {
+          "name": "Ken Burns - Baseball Part 4.mp4",
+          "format": "MPEG4",
+          "size": 3685885679,
+          "url": "https://archive.org/download/ken-burns-baseball-parts-1-and-2/Ken%20Burns%20-%20Baseball%20Part%204.mp4"
+        },
+        {
+          "name": "Ken Burns - Baseball Part 9.mp4",
+          "format": "MPEG4",
+          "size": 3564737179,
+          "url": "https://archive.org/download/ken-burns-baseball-parts-1-and-2/Ken%20Burns%20-%20Baseball%20Part%209.mp4"
+        },
+        {
+          "name": "Ken Burns - Basebal Part 5.mp4",
+          "format": "MPEG4",
+          "size": 3488528502,
+          "url": "https://archive.org/download/ken-burns-baseball-parts-1-and-2/Ken%20Burns%20-%20Basebal%20Part%205.mp4"
+        },
+        {
+          "name": "Ken Burns - Baseball Part 8.mp4",
+          "format": "MPEG4",
+          "size": 3018281046,
+          "url": "https://archive.org/download/ken-burns-baseball-parts-1-and-2/Ken%20Burns%20-%20Baseball%20Part%208.mp4"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/ken-burns-baseball-parts-1-and-2/Ken%20Burns%20-%20Baseball%20Parts%201%20and%202.mp4",
+      "validatedAt": "2026-10-17T06:17:14.550295+00:00"
+    },
+    {
+      "identifier": "sinema-trailer_machete-maidens-unleashed",
+      "title": "Machete Maidens Unleashed! [2010] - Trailer",
+      "description": "In the final decades of the 20th century, the Philippines was a country where low-budget exploitation-film producers were free to make nearly any kind of movie they wanted, any way they pleased. It was a country with extremely lax labor regulations and a very permissive attitude towards cultural expression. As a result, it became a hotbed for the production of cheapie movies. Their history and the genre itself are detailed in this breezy, nostalgic documentary.",
+      "year": "2010",
+      "creator": "",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/sinema-trailer_machete-maidens-unleashed",
+      "thumbnail": "https://archive.org/services/img/sinema-trailer_machete-maidens-unleashed",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "Machete Maidens Unleashed - Trailer (480p_25fps_H264-128kbit_AAC).mp4",
+          "format": "MPEG4",
+          "size": 15007812,
+          "url": "https://archive.org/download/sinema-trailer_machete-maidens-unleashed/Machete%20Maidens%20Unleashed%20-%20Trailer%20%28480p_25fps_H264-128kbit_AAC%29.mp4"
+        },
+        {
+          "name": "Machete Maidens Unleashed - Trailer (480p_25fps_H264-128kbit_AAC).ogv",
+          "format": "Ogg Video",
+          "size": 11533021,
+          "url": "https://archive.org/download/sinema-trailer_machete-maidens-unleashed/Machete%20Maidens%20Unleashed%20-%20Trailer%20%28480p_25fps_H264-128kbit_AAC%29.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/sinema-trailer_machete-maidens-unleashed/Machete%20Maidens%20Unleashed%20-%20Trailer%20%28480p_25fps_H264-128kbit_AAC%29.mp4",
+      "validatedAt": "2026-10-17T06:17:05.024796+00:00"
+    },
+    {
+      "identifier": "manufacturing_consent",
+      "title": "Manufacturing Consent: Noam Chomsky and the Media",
+      "description": "Funny, provocative and surprisingly accessible, MANUFACTURING CONSENT explores the political life and ideas of world-renowned linguist, intellectual and political activist Noam Chomsky. Through a dynamic collage of biography, archival gems, imaginative graphics and outrageous illustrations, Mark Achbar and Peter Wintonick's award-winning documentary highlights Chomsky's probing analysis of mass media and his critique of the forces at work behind the daily news. Available for the first time anywhere on DVD, MANUFACTURING CONSENT features appearances by journalists Bill Moyers and Peter Jennings, pundit William F. Buckley Jr., novelist Tom Wolfe and philosopher Michel Foucault. This Edition features an exclusive ten-years-after video interview with Chomsky.",
+      "year": "1993",
+      "creator": "",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/manufacturing_consent",
+      "thumbnail": "https://archive.org/services/img/manufacturing_consent",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "Noam_Chomsky-Manufacturing_Consent_512kb.mp4",
+          "format": "512Kb MPEG4",
+          "size": 730074947,
+          "url": "https://archive.org/download/manufacturing_consent/Noam_Chomsky-Manufacturing_Consent_512kb.mp4"
+        },
+        {
+          "name": "Noam_Chomsky-Manufacturing_Consent.avi",
+          "format": "Cinepack",
+          "size": 735903744,
+          "url": "https://archive.org/download/manufacturing_consent/Noam_Chomsky-Manufacturing_Consent.avi"
+        },
+        {
+          "name": "Noam_Chomsky-Manufacturing_Consent.ogv",
+          "format": "Ogg Video",
+          "size": 723035347,
+          "url": "https://archive.org/download/manufacturing_consent/Noam_Chomsky-Manufacturing_Consent.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/manufacturing_consent/Noam_Chomsky-Manufacturing_Consent_512kb.mp4",
+      "validatedAt": "2026-10-17T06:17:08.154732+00:00"
+    },
+    {
+      "identifier": "MarvellousMelbourne",
+      "title": "Marvellous Melbourne",
+      "description": "Full Title: Marvellous Melbourne - Queen City of the South An early documentary film about the City of Melbourne, then the interim capital city of Australia. Made in 1910. The director Charles Cozens Spencer was famous for his bushranger films: \"Captain Starlight\" (Robbery Under Arms), \"Captain Midgnight - The Bush King\", \"The Life and Adventures of John Vane, The Notorious Australian Bushranger\", \"Dan Morgan, The Terror of the Australian Bush\" (Mad Dog Morgan). He also made the 1915 Film \"The Shepherd of the Southern Cross.\" He introduced Australia's greatest silent film-maker, Raymond Longford, to the business. He died in September 1930 (he shot himself after going on a killing spree in Canada). Special contents of this edition copyright 2010 Shane I Sullivan. Permission to use these items is granted under creative commons licence.",
+      "year": "1910",
+      "creator": "Charles Cozens Spencer",
+      "license": "http://creativecommons.org/licenses/by-nc-nd/3.0/",
+      "detailsUrl": "https://archive.org/details/MarvellousMelbourne",
+      "thumbnail": "https://archive.org/services/img/MarvellousMelbourne",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "MarvellousMelbourne.mp4",
+          "format": "h.264",
+          "size": 89117088,
+          "url": "https://archive.org/download/MarvellousMelbourne/MarvellousMelbourne.mp4"
+        },
+        {
+          "name": "MarvellousMelbourne_512kb.mp4",
+          "format": "512Kb MPEG4",
+          "size": 62234209,
+          "url": "https://archive.org/download/MarvellousMelbourne/MarvellousMelbourne_512kb.mp4"
+        },
+        {
+          "name": "MarvellousMelbourne.ogv",
+          "format": "Ogg Video",
+          "size": 69808565,
+          "url": "https://archive.org/download/MarvellousMelbourne/MarvellousMelbourne.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/MarvellousMelbourne/MarvellousMelbourne.mp4",
+      "validatedAt": "2026-10-17T06:17:16.784364+00:00"
+    },
+    {
+      "identifier": "pbsnovadocs",
+      "title": "PBS Nova Documentaries",
+      "description": "https://www.pbs.org/wgbh/nova/",
+      "year": "",
+      "creator": "PBS",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/pbsnovadocs",
+      "thumbnail": "https://archive.org/services/img/pbsnovadocs",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "Mark Twain by Ken Burns 1 of 2.mp4",
+          "format": "MPEG4",
+          "size": 1952831194,
+          "url": "https://archive.org/download/pbsnovadocs/Mark%20Twain%20by%20Ken%20Burns%201%20of%202.mp4"
+        },
+        {
+          "name": "The Buddha (2011).mp4",
+          "format": "MPEG4",
+          "size": 1861364919,
+          "url": "https://archive.org/download/pbsnovadocs/The%20Buddha%20%282011%29.mp4"
+        },
+        {
+          "name": "The Nero Files - Secrets of the Dead (2019).mp4",
+          "format": "MPEG4",
+          "size": 1823608483,
+          "url": "https://archive.org/download/pbsnovadocs/The%20Nero%20Files%20-%20Secrets%20of%20the%20Dead%20%282019%29.mp4"
+        },
+        {
+          "name": "Mark Twain by Ken Burns 2 of 2.mp4",
+          "format": "MPEG4",
+          "size": 1576249967,
+          "url": "https://archive.org/download/pbsnovadocs/Mark%20Twain%20by%20Ken%20Burns%202%20of%202.mp4"
+        },
+        {
+          "name": "Building the Great Cathedrals.mp4",
+          "format": "MPEG4",
+          "size": 1261173423,
+          "url": "https://archive.org/download/pbsnovadocs/Building%20the%20Great%20Cathedrals.mp4"
+        },
+        {
+          "name": "Mount St. Helens.mp4",
+          "format": "MPEG4",
+          "size": 1256780079,
+          "url": "https://archive.org/download/pbsnovadocs/Mount%20St.%20Helens.mp4"
+        },
+        {
+          "name": "Ancient Computer - The Antikythera Mechanism (2012).mp4",
+          "format": "MPEG4",
+          "size": 1235798989,
+          "url": "https://archive.org/download/pbsnovadocs/Ancient%20Computer%20-%20The%20Antikythera%20Mechanism%20%282012%29.mp4"
+        },
+        {
+          "name": "Treasures of the Earth - Metals.mp4",
+          "format": "MPEG4",
+          "size": 1227754694,
+          "url": "https://archive.org/download/pbsnovadocs/Treasures%20of%20the%20Earth%20-%20Metals.mp4"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/pbsnovadocs/Mark%20Twain%20by%20Ken%20Burns%201%20of%202.mp4",
+      "validatedAt": "2026-10-17T06:17:04.579444+00:00"
+    },
+    {
+      "identifier": "TreyBarthSample1Sample1mp4",
+      "title": "Sample 1",
+      "description": "a short sample of a segment from my documentary",
+      "year": "",
+      "creator": "Trey Barth",
+      "license": "http://creativecommons.org/licenses/by-nc-sa/2.5/",
+      "detailsUrl": "https://archive.org/details/TreyBarthSample1Sample1mp4",
+      "thumbnail": "https://archive.org/services/img/TreyBarthSample1Sample1mp4",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "Sample_1_512kb.mp4",
+          "format": "512Kb MPEG4",
+          "size": 7250483,
+          "url": "https://archive.org/download/TreyBarthSample1Sample1mp4/Sample_1_512kb.mp4"
+        },
+        {
+          "name": "Sample_1.mp4",
+          "format": "MPEG4",
+          "size": 3366125,
+          "url": "https://archive.org/download/TreyBarthSample1Sample1mp4/Sample_1.mp4"
+        },
+        {
+          "name": "Sample_1.ogv",
+          "format": "Ogg Video",
+          "size": 4725807,
+          "url": "https://archive.org/download/TreyBarthSample1Sample1mp4/Sample_1.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/TreyBarthSample1Sample1mp4/Sample_1_512kb.mp4",
+      "validatedAt": "2026-10-17T06:17:01.887910+00:00"
+    },
+    {
+      "identifier": "turner_video_3092",
+      "title": "The Best of Sex and Violence",
+      "description": "Hosted by John Carradine, this tape is a compilation of scenes from and previews for various exploitation films.",
+      "year": "1981",
+      "creator": "",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/turner_video_3092",
+      "thumbnail": "https://archive.org/services/img/turner_video_3092",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "3092.ia.mp4",
+          "format": "h.264 IA",
+          "size": 4819943,
+          "url": "https://archive.org/download/turner_video_3092/3092.ia.mp4"
+        },
+        {
+          "name": "3092.mp4",
+          "format": "MPEG4",
+          "size": 4819943,
+          "url": "https://archive.org/download/turner_video_3092/3092.mp4"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/turner_video_3092/3092.ia.mp4",
+      "validatedAt": "2026-10-17T06:17:10.315743+00:00"
+    },
+    {
+      "identifier": "The_Corporation_",
+      "title": "The Corporation - Filmmakers Official Download Edition",
+      "description": "The Corporation is a 2003 Canadian documentary film critical of the modern-day corporation, considering it as a class of person and evaluating its behaviour towards society and the world at large as a psychologist might evaluate an ordinary person. The Corporation official movie website",
+      "year": "2003",
+      "creator": "Mark Achbar, Bart Simpson",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/The_Corporation_",
+      "thumbnail": "https://archive.org/services/img/The_Corporation_",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "TheCorporation-Movie-Part1.mp4",
+          "format": "h.264",
+          "size": 537277472,
+          "url": "https://archive.org/download/The_Corporation_/TheCorporation-Movie-Part1.mp4"
+        },
+        {
+          "name": "TheCorporation-Movie-Part2.mp4",
+          "format": "h.264",
+          "size": 375493095,
+          "url": "https://archive.org/download/The_Corporation_/TheCorporation-Movie-Part2.mp4"
+        },
+        {
+          "name": "TheCorporation-Movie-Part1_512kb.mp4",
+          "format": "512Kb MPEG4",
+          "size": 373411018,
+          "url": "https://archive.org/download/The_Corporation_/TheCorporation-Movie-Part1_512kb.mp4"
+        },
+        {
+          "name": "TheCorporation-Movie-Part2_512kb.mp4",
+          "format": "512Kb MPEG4",
+          "size": 261247134,
+          "url": "https://archive.org/download/The_Corporation_/TheCorporation-Movie-Part2_512kb.mp4"
+        },
+        {
+          "name": "TheCorporation-Supplement-JoelBakanInterview.mp4",
+          "format": "h.264",
+          "size": 245336037,
+          "url": "https://archive.org/download/The_Corporation_/TheCorporation-Supplement-JoelBakanInterview.mp4"
+        },
+        {
+          "name": "TheCorporation-Supplement-JoelBakanInterview_512kb.mp4",
+          "format": "512Kb MPEG4",
+          "size": 166388601,
+          "url": "https://archive.org/download/The_Corporation_/TheCorporation-Supplement-JoelBakanInterview_512kb.mp4"
+        },
+        {
+          "name": "TheCorporation-Movie-Part1.avi",
+          "format": "DivX",
+          "size": 733637584,
+          "url": "https://archive.org/download/The_Corporation_/TheCorporation-Movie-Part1.avi"
+        },
+        {
+          "name": "TheCorporation-Movie-Part2.avi",
+          "format": "DivX",
+          "size": 733247708,
+          "url": "https://archive.org/download/The_Corporation_/TheCorporation-Movie-Part2.avi"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/The_Corporation_/TheCorporation-Movie-Part1.mp4",
+      "validatedAt": "2026-10-17T06:17:12.170010+00:00"
+    },
+    {
+      "identifier": "tGoPhoto",
+      "title": "The Genius of Photography (2007)",
+      "description": "In the course of our 170 year relationship, photography has delighted us, served us, moved us, outraged us and occasionally disappointed us. But mainly, it has intrigued us by showing the secret strangeness that lies beneath the world of appearances. And that is photography's true genius. Follow the story of photography in BBC Four's six-part series 'The Genius of Photography'. See some of the most famous photographs ever taken and find out more about what made them so very special. 1. Fixing the Shadows Tracks the first attempts to make images permanent and the mass appeal that the invention of Kodak created. 2. Documents for Artists After World War One the potential of photography attracted the attention of artists and governments alike. 3. Right Time, Right Place Examines the photographs of D-Day, the Holocaust and Hiroshima raising questions about history as seen through the viewfinder. 4. Paper Movies Charts the golden age of 'photographic journeys' and how the use of colour slowly became a credible medium for 'serious' photographers. 5. We Are Family Having conquered the street and the road, photographers approached the final frontier: the home, the self, and private life. 6.",
+      "year": "2007",
+      "creator": "BBC",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/tGoPhoto",
+      "thumbnail": "https://archive.org/services/img/tGoPhoto",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "BBC The Genius of Photography - 01x02 - Documents For Artists.mp4",
+          "format": "MPEG4",
+          "size": 373198172,
+          "url": "https://archive.org/download/tGoPhoto/BBC%20The%20Genius%20of%20Photography%20-%2001x02%20-%20Documents%20For%20Artists.mp4"
+        },
+        {
+          "name": "BBC The Genius of Photography - 01x06 - Snap Judgements.mp4",
+          "format": "MPEG4",
+          "size": 372076351,
+          "url": "https://archive.org/download/tGoPhoto/BBC%20The%20Genius%20of%20Photography%20-%2001x06%20-%20Snap%20Judgements.mp4"
+        },
+        {
+          "name": "BBC The Genius of Photography - 01x05 - We Are Family.mp4",
+          "format": "MPEG4",
+          "size": 371793739,
+          "url": "https://archive.org/download/tGoPhoto/BBC%20The%20Genius%20of%20Photography%20-%2001x05%20-%20We%20Are%20Family.mp4"
+        },
+        {
+          "name": "BBC The Genius of Photography - 01x03 - Right Place Right Time.mp4",
+          "format": "MPEG4",
+          "size": 371598319,
+          "url": "https://archive.org/download/tGoPhoto/BBC%20The%20Genius%20of%20Photography%20-%2001x03%20-%20Right%20Place%20Right%20Time.mp4"
+        },
+        {
+          "name": "BBC The Genius of Photography - 01x01 - Fixing the Shadows.mp4",
+          "format": "MPEG4",
+          "size": 371109511,
+          "url": "https://archive.org/download/tGoPhoto/BBC%20The%20Genius%20of%20Photography%20-%2001x01%20-%20Fixing%20the%20Shadows.mp4"
+        },
+        {
+          "name": "BBC The Genius of Photography - 01x04 - Paper Movies.mp4",
+          "format": "MPEG4",
+          "size": 370870899,
+          "url": "https://archive.org/download/tGoPhoto/BBC%20The%20Genius%20of%20Photography%20-%2001x04%20-%20Paper%20Movies.mp4"
+        },
+        {
+          "name": "BBC The Genius of Photography - 01x02 - Documents For Artists.avi",
+          "format": "Cinepack",
+          "size": 746948002,
+          "url": "https://archive.org/download/tGoPhoto/BBC%20The%20Genius%20of%20Photography%20-%2001x02%20-%20Documents%20For%20Artists.avi"
+        },
+        {
+          "name": "BBC The Genius of Photography - 01x03 - Right Place Right Time.avi",
+          "format": "Cinepack",
+          "size": 744258202,
+          "url": "https://archive.org/download/tGoPhoto/BBC%20The%20Genius%20of%20Photography%20-%2001x03%20-%20Right%20Place%20Right%20Time.avi"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/tGoPhoto/BBC%20The%20Genius%20of%20Photography%20-%2001x02%20-%20Documents%20For%20Artists.mp4",
+      "validatedAt": "2026-10-17T06:17:09.223667+00:00"
+    },
+    {
+      "identifier": "TheInternetsOwnBoyTheStoryOfAaronSwartz",
+      "title": "The Internet's Own Boy: The Story of Aaron Swartz",
+      "description": "The Internet's Own Boy depicts the life of American computer programmer, writer, political organizer and Internet activist Aaron Swartz. It features interviews with his family and friends as well as the internet luminaries who worked with him. The film tells his story up to his eventual suicide after a legal battle, and explores the questions of access to information and civil liberties that drove his work.",
+      "year": "2014",
+      "creator": "Brian Knappenberger",
+      "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "detailsUrl": "https://archive.org/details/TheInternetsOwnBoyTheStoryOfAaronSwartz",
+      "thumbnail": "https://archive.org/services/img/TheInternetsOwnBoyTheStoryOfAaronSwartz",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "TheInternetsOwnBoy_TheStoryofAaronSwartz-HD.mp4",
+          "format": "MPEG4",
+          "size": 1572023339,
+          "url": "https://archive.org/download/TheInternetsOwnBoyTheStoryOfAaronSwartz/TheInternetsOwnBoy_TheStoryofAaronSwartz-HD.mp4"
+        },
+        {
+          "name": "TheInternetsOwnBoy_TheStoryofAaronSwartz-HD.pegssc.mpeg",
+          "format": "MPEG2",
+          "size": 3692251136,
+          "url": "https://archive.org/download/TheInternetsOwnBoyTheStoryOfAaronSwartz/TheInternetsOwnBoy_TheStoryofAaronSwartz-HD.pegssc.mpeg"
+        },
+        {
+          "name": "TheInternetsOwnBoy_TheStoryofAaronSwartz-HD.ogv",
+          "format": "Ogg Video",
+          "size": 482938439,
+          "url": "https://archive.org/download/TheInternetsOwnBoyTheStoryOfAaronSwartz/TheInternetsOwnBoy_TheStoryofAaronSwartz-HD.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/TheInternetsOwnBoyTheStoryOfAaronSwartz/TheInternetsOwnBoy_TheStoryofAaronSwartz-HD.mp4",
+      "validatedAt": "2026-10-17T06:17:02.464328+00:00"
+    },
+    {
+      "identifier": "the-lord-of-the-rings-the-appendices",
+      "title": "The Lord of the Rings - The Appendices",
+      "description": "The Lord of the Rings - The Appendices The Lord of the Rings (Making of /Behind The Scenes) Costa Botes",
+      "year": "",
+      "creator": "",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/the-lord-of-the-rings-the-appendices",
+      "thumbnail": "https://archive.org/services/img/the-lord-of-the-rings-the-appendices",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "The Lord of the Rings (Making of - Behind The Scenes) Costa Botes/The Lord of The Rings - 03 - Return of the King - Behind the Scenes (Costa Botes) HEVC.mp4",
+          "format": "h.264",
+          "size": 654961713,
+          "url": "https://archive.org/download/the-lord-of-the-rings-the-appendices/The%20Lord%20of%20the%20Rings%20%28Making%20of%20-%20Behind%20The%20Scenes%29%20Costa%20Botes/The%20Lord%20of%20The%20Rings%20-%2003%20-%20Return%20of%20the%20King%20-%20Behind%20the%20Scenes%20%28Costa%20Botes%29%20HEVC.mp4"
+        },
+        {
+          "name": "The Lord of the Rings (Making of - Behind The Scenes) Costa Botes/The Lord of The Rings - 02 - The Two Towers - Behind the Scenes (Costa Botes) HEVC.mp4",
+          "format": "h.264",
+          "size": 616755612,
+          "url": "https://archive.org/download/the-lord-of-the-rings-the-appendices/The%20Lord%20of%20the%20Rings%20%28Making%20of%20-%20Behind%20The%20Scenes%29%20Costa%20Botes/The%20Lord%20of%20The%20Rings%20-%2002%20-%20The%20Two%20Towers%20-%20Behind%20the%20Scenes%20%28Costa%20Botes%29%20HEVC.mp4"
+        },
+        {
+          "name": "The Lord of the Rings (Making of - Behind The Scenes) Costa Botes/The Lord of the Rings - 01 - Fellowship of the Ring - Behind the Scenes (Costa Botes) HEVC.mp4",
+          "format": "h.264",
+          "size": 495368752,
+          "url": "https://archive.org/download/the-lord-of-the-rings-the-appendices/The%20Lord%20of%20the%20Rings%20%28Making%20of%20-%20Behind%20The%20Scenes%29%20Costa%20Botes/The%20Lord%20of%20the%20Rings%20-%2001%20-%20Fellowship%20of%20the%20Ring%20-%20Behind%20the%20Scenes%20%28Costa%20Botes%29%20HEVC.mp4"
+        },
+        {
+          "name": "The Lord of the Rings - The Appendices/The Lord of the Rings - 03 - The Return of the King (2003)/LOTR PART 6 - ROTK - The Passing Of An Age - 02 - Filming - Cameras in Middle-Earth.mp4",
+          "format": "h.264",
+          "size": 429540489,
+          "url": "https://archive.org/download/the-lord-of-the-rings-the-appendices/The%20Lord%20of%20the%20Rings%20-%20The%20Appendices/The%20Lord%20of%20the%20Rings%20-%2003%20-%20The%20Return%20of%20the%20King%20%282003%29/LOTR%20PART%206%20-%20ROTK%20-%20The%20Passing%20Of%20An%20Age%20-%2002%20-%20Filming%20-%20Cameras%20in%20Middle-Earth.mp4"
+        },
+        {
+          "name": "The Lord of the Rings - The Appendices/The Lord of the Rings - 02 - The Two Towers (2002)/LOTR CD 4 -  TTT - 03 - Filming - Cameras in Middle-Earth.mp4",
+          "format": "h.264",
+          "size": 405502455,
+          "url": "https://archive.org/download/the-lord-of-the-rings-the-appendices/The%20Lord%20of%20the%20Rings%20-%20The%20Appendices/The%20Lord%20of%20the%20Rings%20-%2002%20-%20The%20Two%20Towers%20%282002%29/LOTR%20CD%204%20-%20%20TTT%20-%2003%20-%20Filming%20-%20Cameras%20in%20Middle-Earth.mp4"
+        },
+        {
+          "name": "The Lord of the Rings - The Appendices/The Lord of the Rings - 01 - The Fellowship of the Ring (2001)/LOTR PART 2 - FOTR - From Vision to Reality - 04 - Filming - Cameras in Middle-Earth.mp4",
+          "format": "h.264",
+          "size": 295076800,
+          "url": "https://archive.org/download/the-lord-of-the-rings-the-appendices/The%20Lord%20of%20the%20Rings%20-%20The%20Appendices/The%20Lord%20of%20the%20Rings%20-%2001%20-%20The%20Fellowship%20of%20the%20Ring%20%282001%29/LOTR%20PART%202%20-%20FOTR%20-%20From%20Vision%20to%20Reality%20-%2004%20-%20Filming%20-%20Cameras%20in%20Middle-Earth.mp4"
+        },
+        {
+          "name": "The Lord of the Rings - The Appendices/The Lord of the Rings - 03 - The Return of the King (2003)/LOTR PART 5 - ROTK - The War of the Ring - 06 - Designing and Building Middle-Earth - Weta Workshop.mp4",
+          "format": "h.264",
+          "size": 281149191,
+          "url": "https://archive.org/download/the-lord-of-the-rings-the-appendices/The%20Lord%20of%20the%20Rings%20-%20The%20Appendices/The%20Lord%20of%20the%20Rings%20-%2003%20-%20The%20Return%20of%20the%20King%20%282003%29/LOTR%20PART%205%20-%20ROTK%20-%20The%20War%20of%20the%20Ring%20-%2006%20-%20Designing%20and%20Building%20Middle-Earth%20-%20Weta%20Workshop.mp4"
+        },
+        {
+          "name": "The Lord of the Rings - The Appendices/The Lord of the Rings - 02 - The Two Towers (2002)/LOTR CD 3 -  TTT - 04 - Designing and Building Middle-Earth - Designing Middle-Earth.mp4",
+          "format": "h.264",
+          "size": 271450261,
+          "url": "https://archive.org/download/the-lord-of-the-rings-the-appendices/The%20Lord%20of%20the%20Rings%20-%20The%20Appendices/The%20Lord%20of%20the%20Rings%20-%2002%20-%20The%20Two%20Towers%20%282002%29/LOTR%20CD%203%20-%20%20TTT%20-%2004%20-%20Designing%20and%20Building%20Middle-Earth%20-%20Designing%20Middle-Earth.mp4"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/the-lord-of-the-rings-the-appendices/The%20Lord%20of%20the%20Rings%20%28Making%20of%20-%20Behind%20The%20Scenes%29%20Costa%20Botes/The%20Lord%20of%20The%20Rings%20-%2003%20-%20Return%20of%20the%20King%20-%20Behind%20the%20Scenes%20%28Costa%20Botes%29%20HEVC.mp4",
+      "validatedAt": "2026-10-17T06:17:11.599338+00:00"
+    },
+    {
+      "identifier": "TheMemphisBelleAStoryofaFlyingFortress",
+      "title": "The Memphis Belle: A Story of a Flying Fortress",
+      "description": "This film is a war documentary produced by one of the \"Hollywood Colonels,\" William Wyler, who joined the Air Force Film unit and recorded the sights and sounds of the last mission of a B-17 bomber known as the Memphis Belle, named after the girlfriend of the pilot. A narrator told the story of the 10 crewmen as examples of simple average American boys doing a tough job. The men and plane were filmed during the bombing raid on the submarine plens in Wilhelmshafen, Germany, \"just one mission of just one plane and one crew in one squadron in one group of one wing of one Air Force out of fifteen United States Army Air Forces.\" It used handheld 16mm and 35mm cameras inside the plane to give the perspective of the crew. Wyler in fact combined footage from several missions to represent this last 25th mission of the plane, a mission that was actually a milk run with no casualties and no difficult landing. He also used film shot by the 8th AAF Combat Camera Unit. Wyler wanted to film a flak burst but never was able to get one: \"I could never get one explosion because how the hell do you know where one's going to explode? Once the cloud is there it's too late. All that flak so close to us, ",
+      "year": "1944",
+      "creator": "First Motion Picture Unit of the U.S. Army Air Corps",
+      "license": "http://creativecommons.org/licenses/publicdomain/",
+      "detailsUrl": "https://archive.org/details/TheMemphisBelleAStoryofaFlyingFortress",
+      "thumbnail": "https://archive.org/services/img/TheMemphisBelleAStoryofaFlyingFortress",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "Memphis.BelleTheA.Story.Of.A.Flying.Fortress.1944.mp4",
+          "format": "h.264",
+          "size": 259639019,
+          "url": "https://archive.org/download/TheMemphisBelleAStoryofaFlyingFortress/Memphis.BelleTheA.Story.Of.A.Flying.Fortress.1944.mp4"
+        },
+        {
+          "name": "Memphis.BelleTheA.Story.Of.A.Flying.Fortress.1944_512kb.mp4",
+          "format": "512Kb MPEG4",
+          "size": 179436817,
+          "url": "https://archive.org/download/TheMemphisBelleAStoryofaFlyingFortress/Memphis.BelleTheA.Story.Of.A.Flying.Fortress.1944_512kb.mp4"
+        },
+        {
+          "name": "Memphis.BelleTheA.Story.Of.A.Flying.Fortress.1944.mpeg",
+          "format": "MPEG2",
+          "size": 925937664,
+          "url": "https://archive.org/download/TheMemphisBelleAStoryofaFlyingFortress/Memphis.BelleTheA.Story.Of.A.Flying.Fortress.1944.mpeg"
+        },
+        {
+          "name": "Memphis.BelleTheA.Story.Of.A.Flying.Fortress.1944.ogv",
+          "format": "Ogg Video",
+          "size": 177081634,
+          "url": "https://archive.org/download/TheMemphisBelleAStoryofaFlyingFortress/Memphis.BelleTheA.Story.Of.A.Flying.Fortress.1944.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/TheMemphisBelleAStoryofaFlyingFortress/Memphis.BelleTheA.Story.Of.A.Flying.Fortress.1944.mp4",
+      "validatedAt": "2026-10-17T06:17:03.667965+00:00"
+    },
+    {
+      "identifier": "the_quiet_one",
+      "title": "The Quiet One",
+      "description": "You can find more information regarding this film on its IMDb page .",
+      "year": "1948",
+      "creator": "",
+      "license": "http://creativecommons.org/licenses/publicdomain/",
+      "detailsUrl": "https://archive.org/details/the_quiet_one",
+      "thumbnail": "https://archive.org/services/img/the_quiet_one",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "the_quiet_one.mp4",
+          "format": "h.264",
+          "size": 399135525,
+          "url": "https://archive.org/download/the_quiet_one/the_quiet_one.mp4"
+        },
+        {
+          "name": "the_quiet_one_512kb.mp4",
+          "format": "512Kb MPEG4",
+          "size": 278757325,
+          "url": "https://archive.org/download/the_quiet_one/the_quiet_one_512kb.mp4"
+        },
+        {
+          "name": "the_quiet_one.mpeg",
+          "format": "MPEG2",
+          "size": 2829920260,
+          "url": "https://archive.org/download/the_quiet_one/the_quiet_one.mpeg"
+        },
+        {
+          "name": "the_quiet_one.ogv",
+          "format": "Ogg Video",
+          "size": 273270864,
+          "url": "https://archive.org/download/the_quiet_one/the_quiet_one.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/the_quiet_one/the_quiet_one.mp4",
+      "validatedAt": "2026-10-17T06:17:08.688361+00:00"
+    },
+    {
+      "identifier": "SweatboxDocumentaryUneditedVersion",
+      "title": "The Sweatbox Documentary (Full Unedited Version)",
+      "description": "Sweatbox Documentary ( Full Unedited Version)",
+      "year": "",
+      "creator": "",
+      "license": "http://creativecommons.org/licenses/by-nc-nd/3.0/",
+      "detailsUrl": "https://archive.org/details/SweatboxDocumentaryUneditedVersion",
+      "thumbnail": "https://archive.org/services/img/SweatboxDocumentaryUneditedVersion",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "Sweatbox Documentary (Unedited Version).mp4",
+          "format": "MPEG4",
+          "size": 3694100149,
+          "url": "https://archive.org/download/SweatboxDocumentaryUneditedVersion/Sweatbox%20Documentary%20%28Unedited%20Version%29.mp4"
+        },
+        {
+          "name": "Sweatbox Documentary (Unedited Version).ogv",
+          "format": "Ogg Video",
+          "size": 439538192,
+          "url": "https://archive.org/download/SweatboxDocumentaryUneditedVersion/Sweatbox%20Documentary%20%28Unedited%20Version%29.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/SweatboxDocumentaryUneditedVersion/Sweatbox%20Documentary%20%28Unedited%20Version%29.mp4",
+      "validatedAt": "2026-10-17T06:17:10.830755+00:00"
+    },
+    {
+      "identifier": "walking-with-dinosaurs",
+      "title": "Walking with Dinosaurs (1999)",
+      "description": "Walking with Dinosaurs is a six-part nature documentary television miniseries created by Tim Haines and produced by BBC Natural History Unit. The series first aired on the BBC in the United Kingdom in 1999 with narration by Kenneth Branagh. The series was subsequently aired in North America on the Discovery Channel in 2000, with Avery Brooks replacing Branagh. The programme explores ancient life of the Mesozoic Era, portraying dinosaurs and their contemporaries in the style of a traditional nature documentary. Developed by Haines and producer Jasper James, Walking with Dinosaurs recreated extinct species through the combined use of computer-generated imagery and animatronics that were incorporated with live action footage shot at various locations. The Guinness Book of World Records reported that the series was the most expensive documentary series per minute ever produced. A re-edited version of Walking with Dinosaurs aired on Discovery Kids for the first season of Prehistoric Planet. It was made more appropriate for children by removing most of the graphic content such as dinosaurs eating each other and trimming down some footage to fit the run time.",
+      "year": "1999",
+      "creator": "BBC",
+      "license": "",
+      "detailsUrl": "https://archive.org/details/walking-with-dinosaurs",
+      "thumbnail": "https://archive.org/services/img/walking-with-dinosaurs",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "Episode 6 - Death of a Dynasty.mp4",
+          "format": "MPEG4",
+          "size": 972026708,
+          "url": "https://archive.org/download/walking-with-dinosaurs/Episode%206%20-%20Death%20of%20a%20Dynasty.mp4"
+        },
+        {
+          "name": "Episode 5 - Spirits of the Ice Forest.mp4",
+          "format": "MPEG4",
+          "size": 959595709,
+          "url": "https://archive.org/download/walking-with-dinosaurs/Episode%205%20-%20Spirits%20of%20the%20Ice%20Forest.mp4"
+        },
+        {
+          "name": "Episode 4 - Giant of the Skies.mp4",
+          "format": "MPEG4",
+          "size": 958023177,
+          "url": "https://archive.org/download/walking-with-dinosaurs/Episode%204%20-%20Giant%20of%20the%20Skies.mp4"
+        },
+        {
+          "name": "Episode 1 - New Blood.mp4",
+          "format": "MPEG4",
+          "size": 957224948,
+          "url": "https://archive.org/download/walking-with-dinosaurs/Episode%201%20-%20New%20Blood.mp4"
+        },
+        {
+          "name": "Episode 2 - A Time of the Titans.mp4",
+          "format": "MPEG4",
+          "size": 952923006,
+          "url": "https://archive.org/download/walking-with-dinosaurs/Episode%202%20-%20A%20Time%20of%20the%20Titans.mp4"
+        },
+        {
+          "name": "Episode 3 - Cruel Sea.mp4",
+          "format": "MPEG4",
+          "size": 935180680,
+          "url": "https://archive.org/download/walking-with-dinosaurs/Episode%203%20-%20Cruel%20Sea.mp4"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/walking-with-dinosaurs/Episode%206%20-%20Death%20of%20a%20Dynasty.mp4",
+      "validatedAt": "2026-10-17T06:17:12.738242+00:00"
+    },
+    {
+      "identifier": "Zeitgeist.Addendum",
+      "title": "Zeitgeist: Addendum",
+      "description": "The second film, Zeitgeist: Addendum, attempts to locate the root causes of pervasive social corruption, while offering a solution. This solution is not based on politics, morality, laws, or any other \"establishment\" notions of human affairs, but rather on a modern, non-superstitious based understanding of what we are and how we align with nature, to which we are a part. The work advocates a new social system which is updated to present day knowledge, highly influenced by the life long work of Jacque Fresco and The Venus Project. Many interesting arguments, many good points. Some footage in this educational film is unauthorized and has been respectfully borrowed in accordance with the Fair Use Doctrine of U.S. Copyright Code Section 107 Duplication of this education film is granted and encouraged for non-resale / educational purposes only. Not-For-Profit Public Screenings are also encouraged and require no permission from us. 2008 G.M.P. LLC http://www.zeitgeistmovie.com",
+      "year": "2008",
+      "creator": "Peter Joseph",
+      "license": "http://creativecommons.org/licenses/by-nc-nd/3.0/",
+      "detailsUrl": "https://archive.org/details/Zeitgeist.Addendum",
+      "thumbnail": "https://archive.org/services/img/Zeitgeist.Addendum",
+      "category": "documentarios",
+      "files": [
+        {
+          "name": "Zeitgeist.Addendum.mp4",
+          "format": "h.264",
+          "size": 763454201,
+          "url": "https://archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.mp4"
+        },
+        {
+          "name": "Zeitgeist.Addendum_512kb.mp4",
+          "format": "512Kb MPEG4",
+          "size": 518664682,
+          "url": "https://archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum_512kb.mp4"
+        },
+        {
+          "name": "Zeitgeist.Addendum.avi",
+          "format": "DivX",
+          "size": 735048246,
+          "url": "https://archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.avi"
+        },
+        {
+          "name": "Zeitgeist.Addendum.ogv",
+          "format": "Ogg Video",
+          "size": 463689267,
+          "url": "https://archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.ogv"
+        }
+      ],
+      "playbackUrl": "https://archive.org/download/Zeitgeist.Addendum/Zeitgeist.Addendum.mp4",
+      "validatedAt": "2026-10-17T06:17:16.316688+00:00"
+    }
+  ]
 }
