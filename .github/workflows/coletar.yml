@@ -34,21 +34,37 @@ jobs:
       - name: Verificar sintaxe do coletor antes de executar
         run: python -m py_compile scripts/coletar.py
 
-      - name: Guardar catálogo válido atual
+      - name: Guardar catálogo válido atual e arquivos por categoria
         run: |
           if [ -f catalog.json ]; then
-            cp catalog.json /tmp/catalogo-anterior.json
+            tar -czf /tmp/catalogo-anterior.tar.gz catalog.json catalog/ 2>/dev/null || tar -czf /tmp/catalogo-anterior.tar.gz catalog.json
             echo "BACKUP_EXISTE=true" >> "$GITHUB_ENV"
           else
             echo "BACKUP_EXISTE=false" >> "$GITHUB_ENV"
           fi
 
-      - name: Coletar candidatos e aplicar moderação
+      - name: Preparar Node para NSFWJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: moderacao/nsfwjs/package.json
+
+      - name: Instalar dependências de moderação visual
+        working-directory: moderacao/nsfwjs
+        run: npm install --no-audit --no-fund
+
+      - name: Coletar candidatos e aplicar moderação textual
         env:
           TARGET_CANDIDATES: "1000"
           MAX_METADATA_CHECKS: "160"
           PYTHONUNBUFFERED: "1"
         run: python scripts/coletar.py
+
+      - name: Moderar capas com NSFWJS
+        env:
+          NSFW_CONCURRENCY: "3"
+        run: node moderacao/nsfwjs/moderar-catalogo.js
 
       - name: Validar catálogo antes de publicar
         id: validar
@@ -100,9 +116,10 @@ jobs:
           print(f"Catálogo validado: {len(items)} itens com metadados e arquivos.")
           PY
 
-      - name: Restaurar catálogo anterior se a validação falhar
+      - name: Restaurar catálogo anterior se qualquer etapa falhar
         if: failure() && env.BACKUP_EXISTE == 'true'
-        run: cp /tmp/catalogo-anterior.json catalog.json
+        run: |
+          tar -xzf /tmp/catalogo-anterior.tar.gz || cp /tmp/catalogo-anterior.json catalog.json
 
       - name: Publicar somente alterações validadas
         if: success()
