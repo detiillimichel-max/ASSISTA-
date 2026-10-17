@@ -112,7 +112,7 @@ BLOCKED_FIELD_TERMS = [
     "vídeo erótico", "video erotico", "filme de sexo", "filme sexual"
 ]
 BLOCKED_FIELD_PATTERNS = [
-    re.compile(r"(?<![a-z0-9])" + re.escape(normalized_text(term)).replace(r"\\ ", r"\\s+") + r"(?![a-z0-9])")
+    re.compile(r"(?<![a-z0-9])" + re.escape(normalized_text(term)).replace(r"\ ", r"\s+") + r"(?![a-z0-9])")
     for term in BLOCKED_FIELD_TERMS
 ]
 
