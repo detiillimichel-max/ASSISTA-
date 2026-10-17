@@ -1,0 +1,17 @@
+{
+  "name": "assista-nsfwjs-moderation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Moderação visual de capas do catálogo ASSISTA+ usando NSFWJS.",
+  "main": "classificar.js",
+  "scripts": {
+    "test": "node classificar.js --help"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^4.22.0",
+    "nsfwjs": "^2.4.2"
+  }
+}
