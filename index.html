@@ -87,7 +87,7 @@ document.getElementById("close").addEventListener("click",closePlayer);
 document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closePlayer()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closePlayer()});
 search.addEventListener("input",render);
-fetch("./catalog.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}).then(data=>{
+fetch("./catalog.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}).then(async data=>{
 allItems=Array.isArray(data.items)?data.items:[];
 // Remove da playlist local itens que foram excluídos pelo filtro familiar do catálogo.
 try{const safeIds=new Set(allItems.map(x=>String(x.identifier)));const saved=await readPlaylist();for(const savedItem of saved){if(!safeIds.has(String(savedItem.identifier)))await deletePlaylistItem(savedItem.identifier)}}catch(e){console.warn("Não foi possível limpar itens antigos da playlist",e)}
