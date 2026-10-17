@@ -85,7 +85,7 @@ def normalized_text(value):
     value = unicodedata.normalize("NFKD", str(value or ""))
     value = "".join(ch for ch in value if not unicodedata.combining(ch))
     value = value.casefold().replace("_", " ").replace("-", " ")
-    return re.sub(r"[^a-z0-9\\s\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]", " ", value)
+    return re.sub(r"[^a-z0-9\s\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]", " ", value)
 
 BLOCKED_PATTERNS = [
     re.compile(r"(?<![a-z0-9])" + re.escape(normalized_text(term)).replace(r"\ ", r"\s+") + r"(?![a-z0-9])")
