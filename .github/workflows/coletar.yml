@@ -1,6 +1,10 @@
 name: Atualizar catálogo Internet Archive
 
 on:
+  push:
+    paths:
+      - "scripts/coletar.py"
+      - ".github/workflows/coletar.yml"
   workflow_dispatch:
   schedule:
     - cron: "17 6 * * *"
